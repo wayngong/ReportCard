@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ReportCardAdapter extends ArrayAdapter<ReportCard> {
 
     // constructor
-    public ReportCardAdapter(Activity content, ArrayList<ReportCard> reportCards){
+    public ReportCardAdapter(Activity content, ArrayList<ReportCard> reportCards) {
         super(content, 0, reportCards);
     }
 
@@ -33,15 +33,37 @@ public class ReportCardAdapter extends ArrayAdapter<ReportCard> {
         // get object located at this position
         ReportCard reportCard = getItem(position);
 
-        // set Subject Name
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.subject_name);
-        try{nameTextView.setText(reportCard.getSubjectName());}
-        catch(Exception e){e.printStackTrace();}
+        // set Course No
+        TextView noTextView = (TextView) listItemView.findViewById(R.id.course_no);
+        try {
+            noTextView.setText(reportCard.getCourseNo());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        // set Subject ReportCard
-        TextView scoreTextView = (TextView) listItemView.findViewById(R.id.subject_score);
-        try{scoreTextView.setText(String.valueOf(reportCard.getSubjectScore()));}
-        catch (Exception e){e.printStackTrace();}
+        // set Course Name
+        TextView nameTextView = (TextView) listItemView.findViewById(R.id.course_name);
+        try {
+            nameTextView.setText(reportCard.getCourseName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // set Course Score
+        TextView scoreTextView = (TextView) listItemView.findViewById(R.id.course_score);
+        try {
+            scoreTextView.setText("Score "+String.valueOf(reportCard.getCourseScore()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // set Course Ranking
+        TextView rankingTextView = (TextView) listItemView.findViewById(R.id.course_ranking);
+        try {
+            rankingTextView.setText("Rank " + String.valueOf(reportCard.getCourseRanking()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return listItemView;
     }

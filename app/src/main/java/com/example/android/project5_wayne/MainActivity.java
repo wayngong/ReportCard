@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<ReportCard> reportCards = new ArrayList<ReportCard>();
-        reportCards.add(new ReportCard("English", 90));
-        reportCards.add(new ReportCard("Maths", 100));
-        reportCards.add(new ReportCard("Physics", 95));
+        reportCards.add(new ReportCard("C0101","English Junior Level", 90, 1, 20));
+        reportCards.add(new ReportCard("C0102","Physics Senior Level", 80, 4, 20));
+        reportCards.add(new ReportCard("C0103","Maths Junior Level", 90, 2, 20));
 
         ReportCardAdapter mReportCardAdapter = new ReportCardAdapter(this, reportCards);
 
